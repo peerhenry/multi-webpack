@@ -1,7 +1,6 @@
 const path = require("path");
 const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const glob = require("glob");
 
 // CONFIG PARTS
 
@@ -31,8 +30,10 @@ const entry = {
 }
 
 const output = {
-  filename: "bundle.js",
-  path: "dist"
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist")
+  }
 }
 
 const sourcemap = { devtool: 'source-map' };
